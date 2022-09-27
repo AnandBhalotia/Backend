@@ -7,18 +7,16 @@ using System.Threading.Tasks;
 
 namespace DemoProject.Data.GraphQL.Types
 {
-    public class WasteConsType: ObjectGraphType<WasteConsumer>
+    public class WasteUserType:ObjectGraphType<WasteUser>
     {
-        public WasteConsType()
+        public WasteUserType()
         {
-            Field(t => t.Cons_Id);
+            Field(t => t.Id);
             Field(t => t.Email);
-            Field(t => t.Password);
             Field(t => t.Org_Name);
             Field(t => t.Org_Desc);
             Field(t => t.Phone_No);
-
+            Field(t => t.Type);
         }
-
     }
 }

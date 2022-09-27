@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace DemoProject.Data.Entities
 {
-    public class WasteProducer
+    public class WasteUser
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
-        public int Prod_Id { get; set; }
+        public int Id { get; set; }
 
         [StringLength(100)]
         public string Email { get; set; }
@@ -29,6 +29,6 @@ namespace DemoProject.Data.Entities
         public string Phone_No { get; set; }
 
         [StringLength(100)]
-        public string Address { get; set; }
+        public string Type { get; set; }
     }
 }

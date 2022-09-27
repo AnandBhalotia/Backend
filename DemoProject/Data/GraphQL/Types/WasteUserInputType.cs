@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace DemoProject.Data.GraphQL.Types
 {
-    public class WasteProdInputType: InputObjectGraphType
+    public class WasteUserInputType: InputObjectGraphType
     {
-        public WasteProdInputType()
+        public WasteUserInputType()
         {
-            Name = "WasteProdInput";
+            Name = "WasteUserInput";
             Field<NonNullGraphType<StringGraphType>>("Email");
             Field<NonNullGraphType<StringGraphType>>("OrgName");
             Field<NonNullGraphType<StringGraphType>>("Password");
             Field<StringGraphType>("OrgDesc");
             Field<StringGraphType>("PhoneNo");
-            Field<StringGraphType>("Address");
+            Field<NonNullGraphType<StringGraphType>>("Type");
+            Field<NonNullGraphType<StringGraphType>>("ProdId");
+            Field<NonNullGraphType<StringGraphType>>("ConsId");
         }
     }
 }

@@ -12,24 +12,15 @@ namespace DemoProject.Data.GraphQL
 {
     public class DemoProjectMutation : ObjectGraphType
     {
-        public DemoProjectMutation(WasteProdRepo wasteprodrepo, WasteConsRepo wasteconsrepo, AdminRepo adminrepo, WasteRepo wasterepo)
+        public DemoProjectMutation(WasteUserRepo wasteuserrepo, AdminRepo adminrepo, WasteRepo wasterepo)
         {
-            Field<WasteProdType>(
-            "createwasteprod",
-            arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteProdInputType>> { Name = "wasteProducer" }),
+            Field<WasteUserType>(
+            "createwasteuser",
+            arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteUserInputType>> { Name = "wasteUser" }),
             resolve: context =>
             {
-                var wasteProducer = context.GetArgument<WasteProducer>("wasteProducer");
-                return wasteprodrepo.Addwasteprod(wasteProducer);
-            });
-
-            Field<WasteConsType>(
-            "createwastecons",
-            arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteConsInputType>> { Name = "wasteConsumer" }),
-            resolve: context =>
-            {
-                var wasteConsumer = context.GetArgument<WasteConsumer>("wasteConsumer");
-                return wasteconsrepo.Addwastecons(wasteConsumer);
+                var wasteUser = context.GetArgument<WasteUser>("wasteUser");
+                return wasteuserrepo.Addwasteuser(wasteUser);
             });
 
             Field<AdminType>(

@@ -34,5 +34,11 @@ namespace DemoProject.Data.Entities
 
         [StringLength(100)]
         public string Energy { get; set; }
+        
+        
+        public int Prod_Id { get; set; }
+
+       
+        public int Cons_Id { get; set; }
     }
 }

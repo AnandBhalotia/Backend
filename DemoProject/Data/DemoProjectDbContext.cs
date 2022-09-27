@@ -13,9 +13,9 @@ namespace DemoProject.Data
         {
             this.Database.EnsureCreated();
         }
-        public DbSet<WasteProducer> WasteProducers { get; set; }
+        public DbSet<WasteUser> WasteUsers { get; set; }
 
-        public DbSet<WasteConsumer> WasteConsumers { get; set; }
+        
 
         public DbSet<Admin> Admins { get; set; }
 

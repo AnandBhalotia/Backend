@@ -11,27 +11,22 @@ namespace DemoProject.Data.GraphQL
 {
     public class DemoProjectQuery : ObjectGraphType
     {
-        public DemoProjectQuery(WasteProdRepo wasteprodrepo, WasteConsRepo wasteconsrepo, AdminRepo adminrepo, WasteRepo wasterepo)
+        public DemoProjectQuery(WasteUserRepo wasteuserrepo, AdminRepo adminrepo, WasteRepo wasterepo)
         {
-            Field<ListGraphType<WasteProdType>>(
-                "wasteproducers",
-                resolve: context => wasteprodrepo.GetWasteProd()
+            Field<ListGraphType<WasteUserType>>(
+                "wasteusers",
+                resolve: context => wasteuserrepo.GetWasteUser()
                 );
 
             Field<ListGraphType<WasteType>>(
-               "wasteprodbyoname",
+               "wasteuserbyoname",
                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "orgname" }),
                resolve: context =>
                {
                    var orgname = context.GetArgument<string>("orgname");
-                   return wasteprodrepo.GetWasteProdbyorgname(orgname);
+                   return wasteuserrepo.GetWasteUserbyorgname(orgname);
                }
 
-               );
-
-            Field<ListGraphType<WasteConsType>>(
-               "wasteconsumers",
-               resolve: context => wasteconsrepo.GetWasteCons()
                );
 
             Field<ListGraphType<AdminType>>(

@@ -13,7 +13,6 @@ namespace DemoProject.Data.GraphQL.Types
         {
             Field(t => t.Admin_Id);
             Field(t => t.Email);
-            Field(t => t.Password);
 
         }
     }

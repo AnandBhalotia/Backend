@@ -10,53 +10,32 @@ namespace DemoProject.Data
     {
         public static void Seed(this DemoProjectDbContext dbContext)
         {
-            if (!dbContext.WasteProducers.Any())
+            if (!dbContext.WasteUsers.Any())
             {
-                dbContext.WasteProducers.Add(new WasteProducer
+                dbContext.WasteUsers.Add(new WasteUser
                 {
                     Email = "Akshay1@gmail.com",
                     Password = "1234",
                     Org_Name = "Akshay",
                     Org_Desc = "Agarwal",
                     Phone_No = "1234567809",
-                    Address= "Bengaluru"
+                    Type= "Consumer"
                 });
 
-                dbContext.WasteProducers.Add(new WasteProducer
+                dbContext.WasteUsers.Add(new WasteUser
                 {
                     Email = "Anand1",
                     Password = "5678",
                     Org_Name = "Anand",
                     Org_Desc = "Bhalotia",
                     Phone_No = "1234567089",
-                    Address= "Mumbai"
+                    Type= "Producer"
                 });
 
                 dbContext.SaveChanges();
             }
 
-            if (!dbContext.WasteConsumers.Any())
-            {
-                dbContext.WasteConsumers.Add(new WasteConsumer
-                {
-                    Email = "Tanmay1@gmail.com",
-                    Password = "1234",
-                    Org_Name = "Tanmay",
-                    Org_Desc = "Ahuja",
-                    Phone_No = "1234566666",
-                });
-
-                dbContext.WasteConsumers.Add(new WasteConsumer
-                {
-                    Email = "Arjun1",
-                    Password = "5678",
-                    Org_Name = "Arjun",
-                    Org_Desc = "Nigam",
-                    Phone_No = "1234567077",
-                });
-
-                dbContext.SaveChanges();
-            }
+           
 
             if (!dbContext.Admins.Any())
             {
@@ -85,7 +64,9 @@ namespace DemoProject.Data
                     From="25may2002",
                     To="31may2002",
                     Status="Accepted",
-                    Energy="too much"
+                    Energy="too much",
+                    Prod_Id=1,
+                    Cons_Id=2
                 });
 
                 dbContext.Wastes.Add(new Waste
@@ -96,7 +77,9 @@ namespace DemoProject.Data
                     From = "14aug2000",
                     To = "27sep2022",
                     Status = "Rejected",
-                    Energy = "negative"
+                    Energy = "negative",
+                    Prod_Id = 1,
+                    Cons_Id = 2
                 });
 
                 dbContext.SaveChanges();

@@ -37,8 +37,7 @@ namespace DemoProject
             options.UseSqlServer(Configuration.GetConnectionString("DemoProject")));
 
             services.AddScoped<AdminRepo>();
-            services.AddScoped<WasteProdRepo>();
-            services.AddScoped<WasteConsRepo>();
+            services.AddScoped<WasteUserRepo>();
             services.AddScoped<WasteRepo>();
 
             services.AddScoped<IServiceProvider>(s => new FuncServiceProvider(s.GetRequiredService));
