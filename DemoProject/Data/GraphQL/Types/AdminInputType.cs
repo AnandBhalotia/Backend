@@ -12,7 +12,7 @@ namespace DemoProject.Data.GraphQL.Types
        
             Name = "AdminInput";
             Field<NonNullGraphType<StringGraphType>>("Email");
-            Field<NonNullGraphType<StringGraphType>>("Password");
+            Field<StringGraphType>("Password");
            
 
         }

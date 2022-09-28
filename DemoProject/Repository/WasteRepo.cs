@@ -20,9 +20,21 @@ namespace DemoProject.Repository
             return _dbContext.Wastes;
         }
 
+        public IEnumerable<Waste> GetWastebyid(int Id)
+        {
+            return _dbContext.Wastes.Where(i => i.Waste_Id == Id);
+        }
+
         public Waste Addwaste(Waste waste)
         {
             _dbContext.Wastes.Add(waste);
+            _dbContext.SaveChanges();
+            return waste;
+        }
+
+        public Waste Updatewaste(Waste waste)
+        {
+            _dbContext.Wastes.Update(waste);
             _dbContext.SaveChanges();
             return waste;
         }

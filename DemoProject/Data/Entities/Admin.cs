@@ -14,6 +14,7 @@ namespace DemoProject.Data.Entities
         public int Admin_Id { get; set; }
 
         [StringLength(100)]
+        
         public string Email { get; set; }
 
         [StringLength(100)]
