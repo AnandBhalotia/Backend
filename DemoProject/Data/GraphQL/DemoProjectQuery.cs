@@ -18,16 +18,15 @@ namespace DemoProject.Data.GraphQL
                 resolve: context => wasteuserrepo.GetWasteUser()
                 );
 
-            Field<ListGraphType<WasteType>>(
-               "wasteuserbyoname",
-               arguments: new QueryArguments(new QueryArgument<NonNullGraphType<StringGraphType>> { Name = "orgname" }),
+            Field<ListGraphType<WasteUserType>>(
+               "wasteuserbyid",
+               arguments: new QueryArguments(new QueryArgument<NonNullGraphType<IntGraphType>> { Name = "Id" }),
                resolve: context =>
                {
-                   var orgname = context.GetArgument<string>("orgname");
-                   return wasteuserrepo.GetWasteUserbyorgname(orgname);
+                   var Id = context.GetArgument<int>("Id");
+                   return wasteuserrepo.GetWasteUserbyid(Id);
                }
-
-               );
+              );
 
             Field<ListGraphType<AdminType>>(
                     "admins",

@@ -12,13 +12,11 @@ namespace DemoProject.Data.GraphQL.Types
         {
             Name = "WasteUserInput";
             Field<NonNullGraphType<StringGraphType>>("Email");
-            Field<NonNullGraphType<StringGraphType>>("OrgName");
+            Field<NonNullGraphType<StringGraphType>>("Org_Name");
             Field<NonNullGraphType<StringGraphType>>("Password");
-            Field<StringGraphType>("OrgDesc");
-            Field<StringGraphType>("PhoneNo");
+            Field<NonNullGraphType<StringGraphType>>("Org_Desc");
+            Field<NonNullGraphType<StringGraphType>>("Phone_No");
             Field<NonNullGraphType<StringGraphType>>("Type");
-            Field<NonNullGraphType<StringGraphType>>("ProdId");
-            Field<NonNullGraphType<StringGraphType>>("ConsId");
         }
     }
 }

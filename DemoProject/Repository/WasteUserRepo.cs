@@ -20,9 +20,9 @@ namespace DemoProject.Repository
             return _dbContext.WasteUsers;
         }
 
-        public IEnumerable<WasteUser> GetWasteUserbyorgname(string orgName)
+        public IEnumerable<WasteUser> GetWasteUserbyid(int Id)
         {
-            return _dbContext.WasteUsers.Where(i => i.Org_Name == orgName);
+            return _dbContext.WasteUsers.Where(i => i.Id == Id);
         }
 
         public WasteUser Addwasteuser(WasteUser wasteuser)

@@ -41,6 +41,14 @@ namespace DemoProject.Data.GraphQL
                return wasterepo.Addwaste(waste);
            });
 
+            //Field<WasteType>(
+            //  "updatewaste",
+            // arguments: new QueryArguments(
+            //    new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "human" }
+            //   ), 
+
+            //    )
+
         }
     }
 }
