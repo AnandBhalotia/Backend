@@ -28,6 +28,9 @@ namespace DemoProject.Data.GraphQL
                }
               );
 
+            
+
+
             Field<ListGraphType<AdminType>>(
                     "admins",
                     resolve: context => adminrepo.GetEmployees()
@@ -37,6 +40,9 @@ namespace DemoProject.Data.GraphQL
                "wastes",
                resolve: context => wasterepo.GetWaste()
                );
+
+
+
         }
 
     }

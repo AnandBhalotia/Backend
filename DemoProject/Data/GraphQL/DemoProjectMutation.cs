@@ -128,9 +128,20 @@ namespace DemoProject.Data.GraphQL
                     var waste = context.GetArgument<Waste>("waste");
                     return wasterepo.Updateenergy(waste);
                 });
-        }
+
+            Field<IntGraphType>(
+                "getprodid",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "waste" }),
+                resolve: context =>
+                {
+                    var waste = context.GetArgument<Waste>("waste");
+                    return wasterepo.GetProdIdbyid(waste);
+                });
 
 
         }
+
+
+    }
     }
 
