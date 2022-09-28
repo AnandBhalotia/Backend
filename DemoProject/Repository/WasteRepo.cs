@@ -32,11 +32,43 @@ namespace DemoProject.Repository
             return waste;
         }
 
-        public Waste Updatewaste(Waste waste)
+        //public Waste Updatewaste(Waste waste)
+        //{
+        //    _dbContext.Wastes.Update(waste);
+        //    _dbContext.SaveChanges();
+        //    return waste;
+        //}
+
+        public Waste Updatestatus(Waste waste)
         {
-            _dbContext.Wastes.Update(waste);
+            Waste existingWaste = _dbContext.Wastes.Find(waste.Waste_Id);
+            if (existingWaste != null)
+            {
+                //existingWaste.Type = waste.Type;
+                //existingWaste.Primary_Substance = waste.Primary_Substance;
+                //existingWaste.Quantity = waste.Quantity;
+                //existingWaste.From = waste.From;
+                //existingWaste.To = waste.To;
+                
+                existingWaste.Status = waste.Status;
+                //existingWaste.Energy = waste.Energy;
+                //existingWaste.Prod_Id = waste.Prod_Id;
+                //existingWaste.Cons_Id = waste.Cons_Id;
+            }
             _dbContext.SaveChanges();
             return waste;
         }
+        public Waste Updateenergy(Waste waste)
+        {
+            Waste existingWaste = _dbContext.Wastes.Find(waste.Waste_Id);
+            if (existingWaste != null)
+            {
+                existingWaste.Energy = waste.Energy;        
+            }
+            _dbContext.SaveChanges();
+            return waste;
+        }
+
     }
 }
+  

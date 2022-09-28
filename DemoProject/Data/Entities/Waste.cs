@@ -21,24 +21,20 @@ namespace DemoProject.Data.Entities
         public string Primary_Substance { get; set; }
 
         [StringLength(100)]
-        public string Quantity { get; set; }
+        public int Quantity { get; set; }
 
         [StringLength(100)]
-        public string From { get; set; }
-
-        [StringLength(100)]
-        public string To { get; set; }
+        public string Month { get; set; }
 
         [StringLength(100)]
         public string Status { get; set; }
 
-        [StringLength(100)]
-        public string Energy { get; set; }
-        
+        public int Energy { get; set; }
         
         public int Prod_Id { get; set; }
 
-       
+        public int Request_Cons_Id { get; set; }
+
         public int Cons_Id { get; set; }
     }
 }

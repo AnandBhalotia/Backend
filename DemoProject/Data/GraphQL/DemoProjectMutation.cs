@@ -42,21 +42,21 @@ namespace DemoProject.Data.GraphQL
                return wasterepo.Addwaste(waste);
            });
 
-            Field<WasteType>(
-               "updatewaste",
-                    arguments: new QueryArguments(
-                        new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "waste" }
-                    ),
-                    resolve: context =>
-                    {
+            //Field<WasteType>(
+            //   "updatewaste",
+            //        arguments: new QueryArguments(
+            //            new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "waste" }
+            //        ),
+            //        resolve: context =>
+            //        {
             
-                        var waste = context.GetArgument<dynamic>("waste");
-                        var wasteDb = wasterepo.GetWastebyid(waste["Waste_Id"]);
-                        var json = JsonConvert.SerializeObject(waste);
-                        JsonConvert.PopulateObject(json, wasteDb);
+            //            var waste = context.GetArgument<dynamic>("waste");
+            //            var wasteDb = wasterepo.GetWastebyid(waste["Waste_Id"]);
+            //            var json = JsonConvert.SerializeObject(waste);
+            //            JsonConvert.PopulateObject(json, wasteDb);
             
-                        return wasterepo.Updatewaste(wasteDb);
-                    });
+            //            return wasterepo.Updatewaste(wasteDb);
+            //        });
 
             Field<ListGraphType<AdminType>>(
             "adminlogin",
@@ -110,6 +110,24 @@ namespace DemoProject.Data.GraphQL
                 var user = context.GetArgument<Admin>("admin");
                 return adminrepo.Adminsignup(user.Email);
             });
+
+            Field<WasteType>(
+                "updateStatus",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "waste" }),
+                resolve: context =>
+                {
+                    var waste = context.GetArgument<Waste>("waste");
+                    return wasterepo.Updatestatus(waste);
+                });
+
+            Field<WasteType>(
+                "updateEnergy",
+                arguments: new QueryArguments(new QueryArgument<NonNullGraphType<WasteInputType>> { Name = "waste" }),
+                resolve: context =>
+                {
+                    var waste = context.GetArgument<Waste>("waste");
+                    return wasterepo.Updateenergy(waste);
+                });
         }
 
 

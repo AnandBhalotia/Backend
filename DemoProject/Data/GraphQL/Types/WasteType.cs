@@ -15,8 +15,8 @@ namespace DemoProject.Data.GraphQL.Types
             Field(t => t.Type);
             Field(t => t.Primary_Substance);
             Field(t => t.Quantity);
-            Field(t => t.From);
-            Field(t => t.To);
+            Field(t => t.Month);
+            Field(t => t.Request_Cons_Id);
             Field(t => t.Status);
             Field(t => t.Energy);
             Field(t => t.Prod_Id);

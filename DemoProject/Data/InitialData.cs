@@ -60,11 +60,11 @@ namespace DemoProject.Data
                 {
                     Type="Organic",
                     Primary_Substance="Food",
-                    Quantity="56",
-                    From="25may2002",
-                    To="31may2002",
+                    Quantity=56,
+                    Month="May",
+                    Request_Cons_Id=2,
                     Status="Accepted",
-                    Energy="too much",
+                    Energy=45,
                     Prod_Id=1,
                     Cons_Id=2
                 });
@@ -73,11 +73,11 @@ namespace DemoProject.Data
                 {
                     Type = "human",
                     Primary_Substance = "Tanmay",
-                    Quantity = "86",
-                    From = "14aug2000",
-                    To = "27sep2022",
+                    Quantity = 78,
+                    Month = "Aug",
+                    Request_Cons_Id = 1,
                     Status = "Rejected",
-                    Energy = "negative",
+                    Energy = 69,
                     Prod_Id = 1,
                     Cons_Id = 2
                 });

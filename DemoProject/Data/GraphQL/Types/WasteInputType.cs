@@ -13,13 +13,14 @@ namespace DemoProject.Data.GraphQL.Types
             Name = "WasteInput";
             Field<StringGraphType>("Type");
             Field<StringGraphType>("Primary_Substance");
-            Field<StringGraphType>("Quantity");
-            Field<StringGraphType>("From");
-            Field<StringGraphType>("To");
+            Field<IntGraphType>("Quantity");
+            Field<StringGraphType>("Month");
             Field<StringGraphType>("Status");
-            //Field<StringGraphType>("Energy");
+            Field<IntGraphType>("Energy");
             Field<IntGraphType>("Prod_Id");
-            //Field<NonNullGraphType<StringGraphType>>("Cons_Id");
+            Field<IntGraphType>("Cons_Id");
+            Field<IntGraphType>("Request_Cons_Id");
+            Field<IntGraphType>("Waste_Id");
         }
     }
 }

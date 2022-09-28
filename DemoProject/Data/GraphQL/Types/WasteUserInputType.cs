@@ -17,6 +17,7 @@ namespace DemoProject.Data.GraphQL.Types
             Field<StringGraphType>("Org_Desc");
             Field<StringGraphType>("Phone_No");
             Field<StringGraphType>("Type");
+
         }
     }
 }
